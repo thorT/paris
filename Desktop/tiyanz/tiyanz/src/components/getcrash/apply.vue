@@ -75,7 +75,6 @@
         currentOpt: 10,
         msgtitle:'',
         tips: [
-          " <div style='line-height: 20px'>· <i class='blue'>支付宝</i>每笔提现均会扣除<i class='blue'>1元手续费</i></div>",
           " <div style='line-height: 20px'>· 到账时间最快当天，通常为第二天到账</div>",
           " <div style='line-height: 20px'>· <i class='blue'>周末、法定节假日不处理提现</i>(周5-6顺延周1,周7顺延周2)</div>",
           " <div style='line-height: 20px'>· 所以提现均人工审核，审核完成后由系统自动打款</div>",

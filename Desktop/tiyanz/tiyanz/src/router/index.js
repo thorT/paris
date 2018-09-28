@@ -20,6 +20,7 @@ const Apply = resolve => require(['@/components/getcrash/apply'], resolve);
 // task
 const Tasklist = resolve => require(['@/components/tasklist/tasklist'], resolve);
 const Tctasklist = resolve => require(['@/components/tasklist/tctasklist'], resolve);
+const Tcmain = resolve => require(['@/components/tasklist/tcmain'], resolve);
 const Taskdetail = resolve => require(['@/components/tasklist/taskdetail'], resolve);
 const Wpdetail = resolve => require(['@/components/tasklist/wptask/wpdetail'], resolve);
 
@@ -123,6 +124,12 @@ export default new Router({
       path: '/tctasklist',
       name: 'tctasklist',
       component: Tctasklist
+    }
+    ,
+    {
+      path: '/tcmain',
+      name: 'tcmain',
+      component: Tcmain
     }
     ,
     {

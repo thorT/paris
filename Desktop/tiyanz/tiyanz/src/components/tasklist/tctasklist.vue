@@ -1,18 +1,19 @@
 <template>
   <div id="tctasklist" class="navi">
-    <MHeader :title="'调查'" :shadow="true" :subtitle="'sub'"></MHeader>
+    <MHeader :title="'调查'" :shadow="true"></MHeader>
     <Loading v-if="initRequst==true"></Loading>
     <div class="main" ref="wrape" :style="{height: contentH + 'px'}">
       <Scroll ref="scroll" class="mscroll" :pullDownRefresh="{threshold: 50,stop: 35}" @pullingDown="pulldown" :data="info">
         <ul class="list X_paddingbottom">
           <li v-for="item, index in info" @click="goto(item)">
             <img v-if="index==0" class="list_icon" src="../../assets/image/tcdaily.png" alt="">
-            <img v-else class="list_icon" src="../../assets/image/tcdefault.png" alt="">
+            <img v-else-if="index==1" class="list_icon" src="../../assets/image/tc/tcpeanut.png" alt="">
+            <img v-else class="list_icon" src="../../assets/image/tc/tcdefault.png" alt="">
             <div class="list_des">
               <h2>{{item.Name}}</h2>
               <h4>{{item.limit?item.limit:'诚实对待调研'}}</h4>
             </div>
-            <i>{{index==0?item.Money:'+'+item.Money}}</i>
+            <i>{{index<2?item.Money:'+'+item.Money}}</i>
             <h5 v-if="index!==0"></h5>
           </li>
         </ul>
@@ -40,6 +41,8 @@
         firstCell:[
           {Name: '每日调查-天天更新',limit:"根据你的适配度获得报酬",Money:'不固定',
             LiveLink:'http://www.tctask.com/index.php?e=index.loading&coopid=1218&userid=[userid]&id=1303'},
+          {Name: '花生实验室',limit:"诚实对待调研",Money:'不固定',
+            LiveLink:'http://www.tctask.com/index.php?e=index.loading&coopid=1218&userid=xxx&id=39163'},
         ],
         info:[],
         initRequst: true,
@@ -58,7 +61,7 @@
       _tcsaveData(res){
         var str =  this.selectedItem.LiveLink;
         var newstr = str.replace( '[userid]' , res.param.uid );//is_dk
-        appfc('js_safari','', {'path':newstr,'is_dk':0,name:this.selectedItem.Name},'');
+        appfc('js_safari','', {'url':newstr,'is_dk':0,name:this.selectedItem.Name},'');
         this.dialogShow = false;
       },
       cancelAction(){

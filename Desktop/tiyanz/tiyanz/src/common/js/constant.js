@@ -16,6 +16,7 @@ const api_is_up         = 'is_up';    //绑定手机
 // 任务
 const api_wapsList      = 'wapsList';    //
 const api_taskLog_start = 'taskLog/start';
+const api_ignore = 'ignore';
 
 export default
 {
@@ -32,4 +33,5 @@ export default
   api_myincome,
   api_is_up,
   api_taskLog_start,
+  api_ignore,
 }

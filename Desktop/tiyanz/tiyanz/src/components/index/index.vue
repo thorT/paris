@@ -37,7 +37,7 @@
               </router-link>
             </li>
             <li>
-              <router-link to="/tctasklist" tag="div">
+              <router-link :to="{path:'/tcmain',query:{uid:info.uid,freeze:info.freeze}}" tag="div">
                 <img src="../../assets/image/home2.png" alt="">
                 <h2>市场调查</h2>
                 <h4>每天可领10元</h4>
@@ -133,7 +133,7 @@
         if (index == 1) {
           this.$router.push('/questions');
         } else {
-          this.$router.push('/tctasklist');
+          this.$router.push({path:'/tcmain',query:{uid:this.info.uid,freeze:this.info.freeze}});
 //          var str =  "http://www.tctask.com/index.php?e=index.dclist&coopid=1218&uid=$uid";
 //          var newstr = str.replace( '$uid' , this.info.uid );//is_dk
 //          appfc('js_openUrl','', {'url':newstr},'');
@@ -149,7 +149,7 @@
           deviceid: res.param.Device_IDFA,
           appsign: res.param.uid,
         });
-        appfc('js_wkWeb', '', {url: url, title: '闲玩'}, '');
+        appfc('js_wkWeb', '', {url: url, title: '玩游戏'}, '');
       },
       _savedata(res) {
 

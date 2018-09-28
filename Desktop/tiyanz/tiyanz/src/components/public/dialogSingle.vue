@@ -2,12 +2,12 @@
   <div class="dialog" v-if="showDialog">
     <div class="dialog_mask">
       <div class="dialog_container">
-          <div class="dialog_content_top" v-html="msg">{{msg}}</div>
-          <div class="dialog_btn">
-            <a href="javascript:;" class="btn" @click="yes">{{sure}}</a>
-            <a href="javascript:;" class="btn" @click="cancel">取消</a>
-            <a href="javascript:;" class="btn3" @click="used">屏蔽这一项调查</a>
-          </div>
+        <div class="dialog_content_top" v-html="msg">{{msg}}</div>
+        <div class="dialog_btn">
+          <div class="line"></div>
+          <a href="javascript:;" class="btn" @click="yes">{{sure}}</a>
+          <a href="javascript:;" class="btn" @click="cancel">取消</a>
+        </div>
       </div>
     </div>
   </div>
@@ -21,7 +21,7 @@
       },
       sure: {
         type: String,
-        default:'好的'
+        default:'确定'
       },
       showDialog: {
         type: Boolean,
@@ -65,18 +65,28 @@
       padding 30px 50px
       word-break break-all
       line-height 50px
+      font-size $font-size-medium-x
 
   .dialog_btn
     width 100%
+    position relative
+    overflow hidden
 
   a
     display inline-block
-    width 100%
+    width 50%
+    float left
     border-radius 5px
     color $color-theme
     border-top solid 1px $color-line-gray
     line-height 110px
-  .btn3
-    line-height 80px
+  .line
+    position absolute
+    display inline-block
+    margin-top:30px
+    float left
+    height 50px
+    width 1px
+    background $color-line-gray
 
 </style>
