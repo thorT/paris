@@ -1,0 +1,25 @@
+source 'https://github.com/CocoaPods/Specs.git'
+platform :ios, '8.0'
+target 'laizhuan' do
+pod 'AFNetworking', '~> 3.0'
+pod 'SAMKeychain'
+pod 'MBProgressHUD', '~> 1.0.0'
+pod 'Toast', '~> 3.1.0'
+pod 'SDWebImage', '~>3.8'
+pod 'CustomIOSAlertView', '~> 0.9.5'
+
+pod 'Bugly'
+pod 'MJRefresh'
+pod 'UMengAnalytics'
+pod 'UMengUShare/Social/SMS'
+pod 'UMengUShare/UI'
+pod 'UMengUShare/Social/Sina'
+pod 'UMengUShare/Social/QQ'
+pod 'UMengUShare/Social/WeChat'
+pod 'JPush'
+
+# pod 'WechatOpenSDK'
+end
+
+
+
